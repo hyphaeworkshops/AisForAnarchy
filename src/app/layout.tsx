@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,10 +37,11 @@ export default function RootLayout({
         {children}
       <footer>
         <p>
-          <a href="https://aisforanarchy.com">A is for Anarchy</a> including both the titular work and this sites' content © 2025 by Conor Hoehn is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
-          <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" className="creative-commons-img" />
-          <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" className="creative-commons-img" />
-          <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" className="creative-commons-img" />
+          <a href="https://aisforanarchy.com">A is for Anarchy</a> including both the titular work and this sites&apos; content © 2025 by Conor Hoehn is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+          {/* The width and height are required by Image but are not used; CSS overrides them. */}
+          <Image src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" className="creative-commons-img" width={20} height={20} />
+          <Image src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" className="creative-commons-img" width={20} height={20} />
+          <Image src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" className="creative-commons-img" width={20} height={20} />
         </p>
         <p>
           <Link href="https://github.com/hyphaeworkshops/AisForAnarchy">Source Code is similarly available.</Link>
